@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
+android:layout_height="match_parent" tools:context=".MainActivity"
+android:id="@+id/parentLayout"
+    android:weightSum="100"
+    >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="false"
+        android:id="@+id/headerLayout"
+        android:weightSum="100">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/header"
+            android:id="@+id/imageView"
+            android:layout_weight="80"/>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#FFE4D0"
+            android:layout_alignParentRight="true"
+            android:id="@+id/btnHead1"
+            android:layout_weight="5"/>
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#8A7C73"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/btnHead2"
+            android:layout_weight="5"/>
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#FFB967"
+            android:id="@+id/btnHead3"
+            android:layout_weight="5"/>
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btnHead4"
+            android:background="#C09464"
+            android:layout_weight="5"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/headerLayout"
+        android:layout_alignLeft="@+id/headerLayout"
+        android:layout_alignStart="@+id/headerLayout"
+        ></LinearLayout>
+</RelativeLayout>
