@@ -13,14 +13,14 @@ android:id="@+id/parentLayout"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="false"
         android:id="@+id/headerLayout"
-        android:weightSum="100">
+        android:weightSum="1">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/header"
             android:id="@+id/imageView"
-            android:layout_weight="80"/>
+            android:layout_weight=".8"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -29,7 +29,7 @@ android:id="@+id/parentLayout"
             android:background="#FFE4D0"
             android:layout_alignParentRight="true"
             android:id="@+id/btnHead1"
-            android:layout_weight="5"/>
+            android:layout_weight=".05"/>
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
@@ -37,29 +37,70 @@ android:id="@+id/parentLayout"
             android:background="#8A7C73"
             android:layout_alignParentLeft="true"
             android:id="@+id/btnHead2"
-            android:layout_weight="5"/>
+            android:layout_weight=".05"/>
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="#FFB967"
             android:id="@+id/btnHead3"
-            android:layout_weight="5"/>
+            android:layout_weight=".05"/>
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/btnHead4"
             android:background="#C09464"
-            android:layout_weight="5"/>
+            android:layout_weight=".05"/>
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/headerLayout"
         android:layout_alignLeft="@+id/headerLayout"
         android:layout_alignStart="@+id/headerLayout"
-        ></LinearLayout>
+        android:weightSum="1"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight=".30"
+            android:weightSum="1">
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:id="@+id/tblLayout">
+                <TableRow>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/blocked"
+                        />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/parkinglot"/>
+                </TableRow>
+            </TableLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"></LinearLayout>
+        </LinearLayout>
+        <WebView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/webView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_weight=".70"/>
+    </LinearLayout>
+
+
 </RelativeLayout>

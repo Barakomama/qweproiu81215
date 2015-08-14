@@ -5,14 +5,35 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
+WebView webView;
+    Button btnShareFB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_main);
+        webView = (WebView) findViewById(R.id.webView);
+        webView.setWebChromeClient(new WebChromeClient());
+        webView.setWebViewClient(new WebViewClient());
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setDomStorageEnabled(true);
+//        webView.loadUrl("http://sureph-001-site1.smarterasp.net/Parkowner/ManageMaps");
+        webView.loadUrl("file:///android_asset/www/index.html");
+        btnShareFB = (Button) findViewById(R.id.btnHead1);
+        btnShareFB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "button clicked",Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
